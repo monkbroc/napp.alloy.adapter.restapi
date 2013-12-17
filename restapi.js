@@ -203,6 +203,9 @@ function Sync(method, model, opts) {
 					var data = parseJSON(DEBUG, _response, parentNode);
 					var values = [];
 					model.length = 0;
+					if(!_.isArray(data)) {
+					    data = [data];
+					}
 					for (var i in data) {
 						var item = {};
 						item = data[i];
